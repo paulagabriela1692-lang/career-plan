@@ -4,343 +4,300 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paula Hernandez — Airbnb Lead Influencer LATAM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy:   #0f1f3d;
-      --rauber: #FF385C;
-      --accent: #FF385C;
-      --gold:   #c8a84b;
-      --teal:   #1a6b72;
-      --light:  #f7f8fc;
-      --mid:    #e8eaf0;
-      --text:   #2c3347;
-      --muted:  #6b7280;
+      --navy:  #0c1a35;
+      --navy2: #152240;
+      --gold:  #c9a84c;
+      --gold2: #e8c46a;
+      --teal:  #17696f;
+      --teal2: #1f8a91;
+      --light: #f5f6fa;
+      --mid:   #e2e5ee;
+      --text:  #28334a;
+      --muted: #6b7490;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--light);
+      background: #dde0e8;
       color: var(--text);
-      font-size: 13.5px;
+      font-size: 13px;
       line-height: 1.6;
     }
 
     .page {
-      max-width: 960px;
-      margin: 40px auto;
+      max-width: 980px;
+      margin: 36px auto;
       background: #fff;
-      box-shadow: 0 8px 40px rgba(0,0,0,.12);
-      border-radius: 4px;
+      box-shadow: 0 12px 60px rgba(0,0,0,.18);
+      border-radius: 6px;
       overflow: hidden;
     }
 
     /* ── HEADER ── */
     header {
-      background: var(--navy);
-      padding: 46px 52px 34px;
+      background: linear-gradient(135deg, #0c1a35 0%, #152e5a 60%, #0e2347 100%);
+      padding: 44px 52px 32px;
       position: relative;
       overflow: hidden;
     }
     header::before {
       content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 280px; height: 280px;
-      background: var(--rauber);
-      opacity: .07;
+      position: absolute; top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(201,168,76,.18) 0%, transparent 70%);
       border-radius: 50%;
     }
     header::after {
       content: '';
-      position: absolute;
-      bottom: -80px; left: 28%;
-      width: 220px; height: 220px;
-      background: var(--rauber);
-      opacity: .05;
+      position: absolute; bottom: -60px; left: 22%;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle, rgba(23,105,111,.2) 0%, transparent 70%);
       border-radius: 50%;
     }
-
-    .header-top {
-      display: flex;
-      justify-content: space-between;
+    .header-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
       align-items: flex-start;
-      gap: 24px;
+      position: relative;
+      z-index: 1;
     }
-
     .header-name {
       font-family: 'Playfair Display', serif;
-      font-size: 40px;
+      font-size: 44px;
+      font-weight: 800;
       color: #fff;
-      letter-spacing: -.5px;
-      line-height: 1.1;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 8px;
     }
-    .header-name span { color: var(--rauber); }
-
+    .header-name span {
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .header-title {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--rauber);
-      margin-top: 7px;
+      color: var(--gold);
+      margin-bottom: 5px;
     }
-
     .header-tagline {
       font-size: 13px;
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.5);
       font-style: italic;
-      margin-top: 4px;
     }
-
-    /* Airbnb targeting badge */
     .target-badge {
-      background: rgba(255,56,92,.15);
-      border: 1px solid rgba(255,56,92,.4);
-      border-radius: 8px;
-      padding: 12px 18px;
-      text-align: right;
+      background: rgba(201,168,76,.1);
+      border: 1px solid rgba(201,168,76,.3);
+      border-radius: 10px;
+      padding: 14px 20px;
+      text-align: center;
       flex-shrink: 0;
+      backdrop-filter: blur(4px);
     }
-    .target-badge-label {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.45);
-      margin-bottom: 4px;
+    .target-badge-eye {
+      font-size: 9px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 6px;
     }
     .target-badge-role {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--rauber);
+      font-size: 14px; font-weight: 800;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       line-height: 1.3;
     }
-    .target-badge-co {
-      font-size: 12px;
-      color: rgba(255,255,255,.6);
-      margin-top: 2px;
-    }
+    .target-badge-co { font-size: 11.5px; color: rgba(255,255,255,.55); margin-top: 4px; }
 
     .contact-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
+      display: flex; flex-wrap: wrap; gap: 18px;
+      margin-top: 22px; position: relative; z-index: 1;
     }
     .contact-bar a, .contact-bar span {
-      color: rgba(255,255,255,.8);
-      text-decoration: none;
-      font-size: 12.5px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      color: rgba(255,255,255,.75); text-decoration: none;
+      font-size: 12px; display: flex; align-items: center; gap: 6px;
+      transition: color .2s;
     }
-    .contact-bar a:hover { color: var(--rauber); }
-    .contact-bar .icon { width: 14px; height: 14px; fill: var(--rauber); flex-shrink: 0; }
+    .contact-bar a:hover { color: var(--gold); }
+    .contact-bar .icon { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
 
     /* ── STATS STRIP ── */
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      background: var(--rauber);
+      background: var(--navy2);
+      border-bottom: 3px solid var(--gold);
     }
     .stat {
-      padding: 16px 8px;
+      padding: 18px 6px;
       text-align: center;
-      border-right: 1px solid rgba(255,255,255,.2);
+      border-right: 1px solid rgba(255,255,255,.07);
+      position: relative;
     }
     .stat:last-child { border-right: none; }
-    .stat-number { font-size: 19px; font-weight: 800; color: #fff; line-height: 1; }
-    .stat-label  { font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.75); margin-top: 3px; }
-
-    /* ── BODY ── */
-    .body-wrap {
-      display: grid;
-      grid-template-columns: 1fr 268px;
+    .stat-number {
+      font-size: 20px; font-weight: 800;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 4px;
     }
+    .stat-label { font-size: 9px; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,255,255,.6); line-height: 1.35; }
 
-    main  { padding: 34px 40px 40px 52px; border-right: 1px solid var(--mid); }
-    aside { padding: 34px 26px 40px; background: var(--light); }
+    /* ── BODY LAYOUT ── */
+    .body-wrap { display: grid; grid-template-columns: 1fr 272px; }
+    main  { padding: 32px 40px 44px 52px; border-right: 1px solid var(--mid); }
+    aside { padding: 32px 24px 44px; background: var(--light); }
 
     /* ── SECTION TITLES ── */
     .section-title {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--rauber);
-      border-bottom: 2px solid var(--rauber);
-      padding-bottom: 5px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 7px;
+      font-size: 9.5px; font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--navy);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 14px;
     }
-    .section-title svg { width: 13px; height: 13px; fill: var(--rauber); }
+    .section-title::after {
+      content: ''; flex: 1; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .section-title svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
 
     /* ── SUMMARY ── */
-    .summary-text {
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--text);
-    }
-    .summary-text + .summary-text { margin-top: 10px; }
-    .highlight { color: var(--rauber); font-weight: 600; }
+    .summary-text { font-size: 13.5px; line-height: 1.78; color: var(--text); }
+    .hi { color: var(--teal); font-weight: 700; }
 
-    .divider { border: none; border-top: 1px dashed var(--mid); margin: 20px 0; }
+    .divider { border: none; border-top: 1px dashed var(--mid); margin: 18px 0; }
 
-    /* ── CREATOR NETWORK CALLOUT ── */
-    .creator-network {
-      background: linear-gradient(135deg, #fff5f6 0%, #fff 100%);
-      border: 1px solid rgba(255,56,92,.2);
-      border-left: 3px solid var(--rauber);
-      border-radius: 6px;
-      padding: 16px 18px;
-      margin-bottom: 20px;
-    }
-    .creator-network-title {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--rauber);
-      margin-bottom: 12px;
+    /* ── CREATOR NETWORK — dark card style ── */
+    .creator-section-sub {
+      font-size: 12px; color: var(--muted); font-style: italic; margin-bottom: 14px;
     }
     .creator-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
+      gap: 10px;
     }
-    .creator-chip {
-      background: #fff;
-      border: 1px solid var(--mid);
-      border-radius: 6px;
-      padding: 7px 10px;
+    .c-card {
+      background: #111827;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.07);
+      padding: 16px 14px 14px;
+      text-align: center;
+      transition: transform .15s, box-shadow .15s, border-color .15s;
     }
-    .creator-chip-name {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.2;
+    .c-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+      border-color: rgba(201,168,76,.25);
     }
-    .creator-chip-meta {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 1px;
+    .c-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 17px; font-weight: 800; color: #fff;
+      letter-spacing: -.5px;
     }
-    .creator-chip-stat {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--rauber);
-      margin-top: 3px;
+    .c-name {
+      font-size: 12px; font-weight: 800; color: #e8edf5;
+      line-height: 1.25; margin-bottom: 2px;
+    }
+    .c-country { font-size: 10.5px; color: #8892a4; margin-bottom: 10px; }
+    .c-followers {
+      font-size: 18px; font-weight: 900; line-height: 1;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .c-platform-lbl {
+      font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: #8892a4; margin-top: 2px; margin-bottom: 5px;
+    }
+    .c-stat {
+      font-size: 10.5px; font-weight: 700; color: #00c9b1;
     }
 
     /* ── EXPERIENCE ── */
-    .job { margin-bottom: 26px; }
+    .job { margin-bottom: 24px; }
     .job:last-child { margin-bottom: 0; }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 2px;
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 2px; }
+    .job-company { font-size: 12px; font-weight: 800; color: var(--navy); text-transform: uppercase; letter-spacing: .8px; }
+    .job-date { font-size: 10.5px; color: var(--muted); white-space: nowrap; text-align: right; }
+    .job-title { font-size: 13.5px; font-weight: 700; color: var(--teal); margin-bottom: 4px; }
+    .job-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+      background: linear-gradient(90deg, rgba(201,168,76,.12), rgba(201,168,76,.04));
+      color: #8a6b18; border: 1px solid rgba(201,168,76,.3);
+      border-radius: 20px; padding: 3px 12px; margin-bottom: 9px;
     }
-    .job-company  { font-size: 12.5px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: .5px; }
-    .job-date     { font-size: 11px; color: var(--muted); white-space: nowrap; padding-top: 1px; text-align: right; }
-    .job-title    { font-size: 13.5px; font-weight: 600; color: var(--teal); margin-bottom: 3px; }
-    .job-tag      {
-      display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: .8px;
-      text-transform: uppercase; background: rgba(255,56,92,.08); color: var(--rauber);
-      border: 1px solid rgba(255,56,92,.25); border-radius: 20px; padding: 2px 10px; margin-bottom: 8px;
-    }
-
     .job-bullets { list-style: none; }
     .job-bullets li {
-      padding: 3px 0 3px 16px;
-      position: relative;
-      font-size: 13px;
-      color: var(--text);
+      padding: 3px 0 3px 16px; position: relative;
+      font-size: 13px; color: var(--text);
     }
     .job-bullets li::before {
-      content: '▸';
-      position: absolute; left: 0; top: 5px;
-      color: var(--rauber); font-size: 10px;
+      content: '▸'; position: absolute; left: 0; top: 5px;
+      color: var(--gold); font-size: 9px;
     }
-    .job-bullets li strong { color: var(--navy); font-weight: 600; }
+    .job-bullets li strong { color: var(--navy); font-weight: 700; }
 
     /* ── SIDEBAR ── */
-    .sidebar-section { margin-bottom: 26px; }
-
-    /* Skills */
-    .skill-group { margin-bottom: 14px; }
-    .skill-group-title {
-      font-size: 10px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--navy); margin-bottom: 6px;
-    }
+    .sidebar-section { margin-bottom: 24px; }
+    .skill-group { margin-bottom: 13px; }
+    .skill-group-title { font-size: 9.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--navy); margin-bottom: 6px; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
     .skill-tag {
-      background: #fff; border: 1px solid var(--mid); border-radius: 20px;
-      font-size: 11px; padding: 3px 9px; color: var(--text); font-weight: 500;
+      font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 600;
+      background: #fff; border: 1.5px solid var(--navy); color: var(--navy);
     }
-    .skill-tag.core {
-      background: rgba(255,56,92,.07); border-color: rgba(255,56,92,.3); color: #c02040; font-weight: 600;
-    }
-    .skill-tag.tools {
-      background: rgba(26,107,114,.07); border-color: rgba(26,107,114,.3); color: var(--teal);
-    }
+    .skill-tag.core { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .skill-tag.tools { background: #fff; border: 1.5px solid var(--teal); color: var(--teal); }
 
-    /* Platforms bar */
-    .platform-row { margin-bottom: 10px; }
+    /* Platform bars */
+    .platform-row { margin-bottom: 9px; }
     .platform-label-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
     .platform-name { font-size: 11.5px; font-weight: 600; color: var(--text); }
-    .platform-pct  { font-size: 11px; font-weight: 700; color: var(--muted); }
+    .platform-pct  { font-size: 11px; font-weight: 800; color: var(--navy); }
     .platform-bar  { height: 5px; background: var(--mid); border-radius: 10px; overflow: hidden; }
     .platform-fill { height: 100%; border-radius: 10px; }
 
     /* Education */
-    .edu-item { margin-bottom: 12px; }
-    .edu-degree { font-size: 12px; font-weight: 600; color: var(--navy); line-height: 1.3; }
-    .edu-school { font-size: 11px; color: var(--teal); margin-top: 2px; }
-    .edu-year   { font-size: 10.5px; color: var(--muted); }
+    .edu-item { margin-bottom: 11px; }
+    .edu-degree { font-size: 11.5px; font-weight: 700; color: var(--navy); line-height: 1.35; }
+    .edu-school { font-size: 10.5px; color: var(--teal); font-weight: 600; margin-top: 1px; }
+    .edu-year   { font-size: 10px; color: var(--muted); }
 
     /* Certs */
-    .cert-item {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 7px; font-size: 11.5px; color: var(--text);
-    }
-    .cert-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rauber); flex-shrink: 0; }
-    .cert-dot.prog { background: transparent; border: 2px solid var(--rauber); }
+    .cert-item { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; font-size: 11.5px; }
+    .cert-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .cert-dot.prog { background: transparent; border: 2px solid var(--gold); }
 
-    /* Language bars */
+    /* Lang bars */
     .lang-wrap { margin-bottom: 11px; }
     .lang-row  { display: flex; justify-content: space-between; margin-bottom: 3px; }
-    .lang-name { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+    .lang-name { font-size: 12.5px; font-weight: 700; color: var(--navy); }
     .lang-lvl  { font-size: 10px; letter-spacing: .8px; text-transform: uppercase; color: var(--muted); }
-    .lang-bar  { height: 3px; background: var(--mid); border-radius: 10px; overflow: hidden; }
-    .lang-fill { height: 100%; background: linear-gradient(90deg, var(--rauber), #ff8fa3); border-radius: 10px; }
+    .lang-bar  { height: 4px; background: var(--mid); border-radius: 10px; overflow: hidden; }
+    .lang-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--gold)); border-radius: 10px; }
 
-    /* YoY box */
-    .yoy-box {
-      background: #fff;
-      border: 1px solid var(--mid);
-      border-radius: 8px;
-      padding: 12px 14px;
-      margin-bottom: 8px;
-    }
-    .yoy-year  { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-    .yoy-stat  { display: flex; justify-content: space-between; font-size: 11.5px; margin-bottom: 4px; }
-    .yoy-key   { color: var(--muted); }
-    .yoy-val   { font-weight: 700; color: var(--navy); }
-    .yoy-val.red { color: var(--rauber); }
+    /* YoY */
+    .yoy-box { background: #fff; border: 1px solid var(--mid); border-radius: 8px; padding: 11px 13px; margin-bottom: 7px; }
+    .yoy-year { font-size: 9.5px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 7px; }
+    .yoy-stat { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 3px; }
+    .yoy-key  { color: var(--muted); }
+    .yoy-val  { font-weight: 700; color: var(--navy); }
+    .yoy-val.hi { color: var(--teal); }
 
     @media print {
-      body { background: #fff; font-size: 12px; }
-      .page { margin: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; border-radius: 0; }
       header, .stats-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .c-card-top { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     }
   </style>
 </head>
@@ -349,14 +306,14 @@
 
   <!-- HEADER -->
   <header>
-    <div class="header-top">
+    <div class="header-grid">
       <div>
         <div class="header-name">Paula <span>Hernandez</span></div>
-        <div class="header-title">Influencer Marketing Lead — LATAM &nbsp;·&nbsp; TikTok · Instagram · YouTube</div>
+        <div class="header-title">Influencer Marketing Lead — LATAM &nbsp;·&nbsp; TikTok &nbsp;·&nbsp; Instagram &nbsp;·&nbsp; YouTube</div>
         <div class="header-tagline">10+ years building authentic stories that connect brands to culture across Latin America</div>
       </div>
       <div class="target-badge">
-        <div class="target-badge-label">Applying for</div>
+        <div class="target-badge-eye">Applying for</div>
         <div class="target-badge-role">Lead Influencer,<br>LATAM</div>
         <div class="target-badge-co">Airbnb · Miami, FL</div>
       </div>
@@ -372,7 +329,7 @@
       </span>
       <span>
         <svg class="icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 119.5 9 2.5 2.5 0 0112 11.5z"/></svg>
-        West Palm Beach, FL (Miami area)
+        West Palm Beach, FL · Miami area
       </span>
       <a href="https://linkedin.com/in/paula-hernandez-b4b676135" target="_blank">
         <svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-6a2 2 0 110 4 2 2 0 010-4z"/></svg>
@@ -383,17 +340,35 @@
 
   <!-- STATS STRIP -->
   <div class="stats-strip">
-    <div class="stat"><div class="stat-number">90M+</div><div class="stat-label">Total Views</div></div>
-    <div class="stat"><div class="stat-number">1,000+</div><div class="stat-label">Posts Produced</div></div>
-    <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Creators Managed</div></div>
-    <div class="stat"><div class="stat-number">2.5M+</div><div class="stat-label">Total Likes</div></div>
-    <div class="stat"><div class="stat-number">15+</div><div class="stat-label">LATAM Countries</div></div>
-    <div class="stat"><div class="stat-number">4</div><div class="stat-label">Platforms</div></div>
+    <div class="stat">
+      <div class="stat-number">90M+</div>
+      <div class="stat-label">Million<br>Total Views</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">1,000+</div>
+      <div class="stat-label">Posts<br>Produced</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">200+</div>
+      <div class="stat-label">Creators<br>Managed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">2.5M+</div>
+      <div class="stat-label">Million<br>Total Likes</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">15+</div>
+      <div class="stat-label">LATAM<br>Countries</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">4</div>
+      <div class="stat-label">Social<br>Platforms</div>
+    </div>
   </div>
 
   <div class="body-wrap">
 
-    <!-- MAIN -->
+    <!-- MAIN COLUMN -->
     <main>
 
       <!-- SUMMARY -->
@@ -402,10 +377,10 @@
         Professional Summary
       </div>
       <p class="summary-text">
-        Bilingual influencer marketing leader (English/Spanish) with <span class="highlight">10+ years in marketing</span> and 4+ years building and running a full-scale LATAM influencer program from the ground up at a fast-growing U.S. Hispanic FinTech. I have cultivated <span class="highlight">direct 1:1 relationships with 100+ LATAM creators</span> — from micro influencers to 12.5M-follower macro talent — across Venezuela, Mexico, Colombia, Dominican Republic, Cuba, Nicaragua, Argentina, and beyond, driving <span class="highlight">90M+ views and 2.5M+ likes</span> across Instagram, TikTok, Facebook, and YouTube.
+        Bilingual influencer marketing leader (English/Spanish) with <span class="hi">10+ years in marketing</span> and 4+ years running a full-scale LATAM influencer program built from zero at a fast-growing U.S. Hispanic FinTech. I have cultivated <span class="hi">direct 1:1 relationships with 200+ LATAM creators</span> — from micro-influencers to 12.5 million-follower macro talent — across Venezuela, Mexico, Colombia, Dominican Republic, Cuba, Nicaragua, Argentina, and beyond, driving <span class="hi">90 million+ views and 2.5 million+ likes</span> across Instagram, TikTok, Facebook, and YouTube.
       </p>
       <p class="summary-text" style="margin-top:10px;">
-        I specialize in building <span class="highlight">authentic, culture-first influencer strategies</span> that elevate brand discovery, spark social conversation, and drive measurable results. I am a storyteller by training — with a Master's in Strategic Planning in Advertising &amp; PR and a background in journalism and on-air presenting — which means I don't just manage creators: I help them tell stories that resonate. Comfortable navigating cross-country teams, agency relationships, and competing priorities at regional scale.
+        I specialize in <span class="hi">authentic, culture-first influencer strategies</span> that spark social conversation and drive brand discovery. A storyteller by training — Master's in Strategic Planning in Advertising &amp; PR, background in journalism and on-air presenting — I don't just manage creators: I help them tell stories that resonate. Fluent in navigating cross-country teams, agency relationships, and competing priorities at regional scale.
       </p>
 
       <hr class="divider" />
@@ -415,56 +390,94 @@
         <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 3-1.34 3-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
         Direct LATAM Creator Relationships
       </div>
-      <div class="creator-network">
-        <div class="creator-network-title">Key talent managed — direct 1:1 relationships across 15+ LATAM markets</div>
-        <div class="creator-grid">
-          <div class="creator-chip">
-            <div class="creator-chip-name">Manuel Conecta</div>
-            <div class="creator-chip-meta">🇻🇪 Venezuela · TikTok</div>
-            <div class="creator-chip-stat">12.5M followers</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Aleska Genesis</div>
-            <div class="creator-chip-meta">🇻🇪 Venezuela · Instagram</div>
-            <div class="creator-chip-stat">8.1M followers · 4.2M views</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Marian Corrales</div>
-            <div class="creator-chip-meta">🇻🇪 Venezuela · TikTok</div>
-            <div class="creator-chip-stat">8.1M followers · 2.7M peak</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Benjamin Zamora</div>
-            <div class="creator-chip-meta">🇲🇽 Mexico · TikTok/IG/FB</div>
-            <div class="creator-chip-stat">6M followers · 50+ posts</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Erik y Andrea</div>
-            <div class="creator-chip-meta">🇻🇪 Venezuela · TikTok</div>
-            <div class="creator-chip-stat">6M followers</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Antonia Botero</div>
-            <div class="creator-chip-meta">🌎 Colombia · TikTok/IG</div>
-            <div class="creator-chip-stat">4.6M followers · 10.4M views</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Jerry Camona</div>
-            <div class="creator-chip-meta">🇩🇴 Dominican Rep. · IG/TT</div>
-            <div class="creator-chip-stat">5.9M followers</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Sheynnis Palacios</div>
-            <div class="creator-chip-meta">🇳🇮 Nicaragua · Instagram</div>
-            <div class="creator-chip-stat">Miss Universe 2023 · 2.2M</div>
-          </div>
-          <div class="creator-chip">
-            <div class="creator-chip-name">Valeria Villalobos</div>
-            <div class="creator-chip-meta">🇲🇽 Mexico · TikTok</div>
-            <div class="creator-chip-stat">4.1M followers · 637K views</div>
-          </div>
+
+      <p class="creator-section-sub">A selection of the 200+ creators I've worked with directly — spanning entertainment, lifestyle, news &amp; comedy across 15+ Latin American markets. M = million.</p>
+
+      <div class="creator-grid">
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#00c9b1,#009e8e)">MC</div>
+          <div class="c-name">Manuel Conecta</div>
+          <div class="c-country">🇻🇪 Venezuela</div>
+          <div class="c-followers">12.5M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">101K likes · single post</div>
         </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#ff6b9d,#e1306c)">AG</div>
+          <div class="c-name">Aleska Genesis</div>
+          <div class="c-country">🇻🇪 Venezuela</div>
+          <div class="c-followers">8.1M</div>
+          <div class="c-platform-lbl">Instagram Followers</div>
+          <div class="c-stat">4.2M views · Feb 2025</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#00c9b1,#1a8a72)">MC</div>
+          <div class="c-name">Marian Corrales</div>
+          <div class="c-country">🇻🇪 Venezuela</div>
+          <div class="c-followers">8.1M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">2.7M peak video 2025</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#f5a623,#d4830a)">AB</div>
+          <div class="c-name">Antonia Botero</div>
+          <div class="c-country">🌎 Colombia</div>
+          <div class="c-followers">4.6M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">10.4M views in 2024</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#4a90e2,#2c6fbe)">BZ</div>
+          <div class="c-name">Benjamin Zamora</div>
+          <div class="c-country">🇲🇽 Mexico</div>
+          <div class="c-followers">6.1M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">50+ posts · 3 platforms</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#9b59b6,#7d3c98)">EA</div>
+          <div class="c-name">Erik y Andrea</div>
+          <div class="c-country">🇻🇪 Venezuela</div>
+          <div class="c-followers">6M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">397K peak TikTok views</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#e74c3c,#c0392b)">SP</div>
+          <div class="c-name">Sheynnis Palacios</div>
+          <div class="c-country">🇳🇮 Nicaragua</div>
+          <div class="c-followers">2.2M</div>
+          <div class="c-platform-lbl">Instagram Followers</div>
+          <div class="c-stat">Miss Universe 2023</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#1abc9c,#16a085)">CJ</div>
+          <div class="c-name">Cesar NoJoda</div>
+          <div class="c-country">🇲🇽 Mexico</div>
+          <div class="c-followers">4.4M</div>
+          <div class="c-platform-lbl">Instagram Followers</div>
+          <div class="c-stat">556K views · 27.5K likes</div>
+        </div>
+
+        <div class="c-card">
+          <div class="c-avatar" style="background:linear-gradient(135deg,#8e44ad,#6c3483)">VV</div>
+          <div class="c-name">Valeria Villalobos</div>
+          <div class="c-country">🇲🇽 Mexico</div>
+          <div class="c-followers">4.1M</div>
+          <div class="c-platform-lbl">TikTok Followers</div>
+          <div class="c-stat">637K views · single Reel</div>
+        </div>
+
       </div>
+      <p style="text-align:center;font-size:10.5px;color:#8892a4;margin-top:10px;font-style:italic;">+ 190 more creators managed across Venezuela, Mexico, Colombia, Dominican Republic, Cuba, Argentina &amp; more</p>
 
       <hr class="divider" />
 
@@ -474,7 +487,6 @@
         Professional Experience
       </div>
 
-      <!-- MyBambu Head -->
       <div class="job">
         <div class="job-header">
           <div>
@@ -483,17 +495,16 @@
           </div>
           <div class="job-date">Apr 2022 – Present · 4+ yrs<br>West Palm Beach, FL</div>
         </div>
-        <span class="job-tag">Built entire Influencer &amp; Marketing function from zero</span>
+        <span class="job-tag">★ Built entire Influencer &amp; Marketing department from zero</span>
         <ul class="job-bullets">
-          <li><strong>Regional LATAM Influencer Strategy:</strong> Designed and led a full-funnel influencer program targeting Hispanic audiences across 15+ Latin American markets — Venezuela, Mexico, Colombia, Dominican Republic, Cuba, Nicaragua, Argentina, and more — across Instagram, TikTok, Facebook, and YouTube.</li>
-          <li><strong>Creator Relationship Management:</strong> Built and maintained direct 1:1 relationships with 100+ creators from micro to 12.5M-follower macro talent. Managed all outreach, negotiations, rates, contracts, briefs, approvals, and post-campaign analysis.</li>
-          <li><strong>Campaign Performance:</strong> Drove <strong>90M+ total views</strong> and <strong>2.5M+ likes</strong> across 1,000+ posts in 2024–2025. Peak campaigns: Marian Corrales (2.7M views single TikTok video, 238K likes); Aleska Genesis (4.2M views, 161K likes single IG Reel); Antonia Botero (10.4M views across one partnership).</li>
-          <li><strong>Multi-Platform Execution:</strong> Instagram (62% of volume), TikTok (28%), Facebook (9%), YouTube (1%). Managed content types across Reels, Stories, TikTok videos, YouTube integrations, and static posts — 58% video-first.</li>
-          <li><strong>Year-over-Year Growth:</strong> Scaled from 38.8M views (2024, 432 posts, 78 creators) to 55M+ views (2025, 602+ posts, 60+ creators), expanding into 5+ new LATAM markets mid-cycle.</li>
-          <li><strong>Cross-Functional &amp; Agency Management:</strong> Collaborated with product, design, legal, and leadership teams to align influencer campaigns with brand launches and product objectives. Coordinated with external creative and PR agencies across multiple countries.</li>
-          <li><strong>Analytics &amp; Reporting:</strong> Tracked all campaigns via performance dashboards — views, engagement rate, likes, shares, saves, comments, and ROI — providing monthly reporting to senior stakeholders and optimizing based on data.</li>
-          <li><strong>Brand Ambassador Program:</strong> Built a nationwide ambassador network of 100+ participants — designing onboarding, training, incentive structures, content guidelines, and performance metrics driving grassroots brand growth.</li>
-          <li><strong>Authentic Storytelling at Scale:</strong> Created all influencer briefs, brand guidelines, and content direction — ensuring authentic, culturally relevant stories that resonated with LATAM immigrant audiences in the U.S. and abroad.</li>
+          <li><strong>Regional LATAM Influencer Strategy:</strong> Designed and led a full-funnel influencer program across 15+ Latin American markets — Venezuela, Mexico, Colombia, Dominican Republic, Cuba, Nicaragua, Argentina — on Instagram, TikTok, Facebook, and YouTube.</li>
+          <li><strong>Creator Relationship Management:</strong> Direct 1:1 relationships with 200+ creators — from micro to 12.5 million-follower macro talent. Managed all outreach, negotiations, contracts, briefs, content approvals, and post-campaign analysis.</li>
+          <li><strong>Campaign Performance:</strong> Drove <strong>90 million+ views</strong> and <strong>2.5 million+ likes</strong> across 1,000+ posts (2024–2025). Top results: Marian Corrales — 2.7 million views single TikTok, 238K likes; Aleska Genesis — 4.2 million views, 161K likes single IG Reel; Antonia Botero — 10.4 million views across one partnership.</li>
+          <li><strong>Year-over-Year Growth:</strong> Scaled from 38.8 million views (2024 · 432 posts · 78 creators) to 55 million+ views (2025 · 602+ posts), opening 5+ new LATAM markets mid-cycle.</li>
+          <li><strong>Agency &amp; Cross-Functional Management:</strong> Collaborated with product, design, legal, and leadership across multiple countries. Coordinated external creative and PR agencies at regional scale.</li>
+          <li><strong>Analytics &amp; Reporting:</strong> Full performance dashboards tracking views, ER, likes, shares, saves, and ROI — monthly reporting to senior stakeholders with continuous data-driven optimization.</li>
+          <li><strong>Ambassador Program:</strong> Built and managed a nationwide network of 200+ ambassadors — onboarding, training, content guidelines, and incentive structures driving grassroots brand growth.</li>
+          <li><strong>Authentic Storytelling:</strong> Created all influencer briefs, brand guidelines, and content direction — culturally resonant stories connecting with LATAM immigrant audiences across the U.S. and Latin America.</li>
         </ul>
       </div>
 
@@ -509,8 +520,8 @@
         </div>
         <ul class="job-bullets">
           <li>Launched early influencer and media partnerships for a brand-new FinTech in the Hispanic market</li>
-          <li>Developed bilingual PR content and executed media relations targeting Hispanic journalists and outlets</li>
-          <li>Managed social media strategy and email communications for bilingual audience</li>
+          <li>Developed bilingual PR content; executed media relations with key Hispanic journalists and outlets</li>
+          <li>Managed social media strategy and email communications for bilingual audiences</li>
         </ul>
       </div>
 
@@ -541,8 +552,7 @@
           <div class="job-date">Oct 2018 – Aug 2019<br>West Palm Beach, FL</div>
         </div>
         <ul class="job-bullets">
-          <li>Produced and presented bilingual news segments — deep understanding of content, storytelling, and audience connection</li>
-          <li>Directed audiovisual production from concept to delivery: foundational to creator briefing &amp; content direction</li>
+          <li>Produced and presented bilingual news segments — deep foundation in content, authentic storytelling, and audience connection directly applied to creator briefing today</li>
         </ul>
       </div>
 
@@ -557,7 +567,7 @@
           <div class="job-date">Jun 2014 – Oct 2019 · 5 yrs<br>Quito, Ecuador</div>
         </div>
         <ul class="job-bullets">
-          <li>Produced feature articles, press coverage, and multimedia content — strong foundation in authentic storytelling and brand narratives</li>
+          <li>Produced feature articles and multimedia content — strong foundation in brand narratives and authentic storytelling</li>
         </ul>
       </div>
 
@@ -566,7 +576,6 @@
     <!-- SIDEBAR -->
     <aside>
 
-      <!-- CORE SKILLS -->
       <div class="sidebar-section">
         <div class="section-title">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
@@ -576,7 +585,7 @@
         <div class="skill-group">
           <div class="skill-group-title">Influencer Strategy</div>
           <div class="skill-tags">
-            <span class="skill-tag core">Regional LATAM Strategy</span>
+            <span class="skill-tag core">LATAM Regional Strategy</span>
             <span class="skill-tag core">Creator Relationships</span>
             <span class="skill-tag core">Macro + Micro Mix</span>
             <span class="skill-tag core">Campaign Briefing</span>
@@ -604,9 +613,8 @@
             <span class="skill-tag tools">Hootsuite</span>
             <span class="skill-tag tools">Meta Business Suite</span>
             <span class="skill-tag tools">Google Analytics</span>
+            <span class="skill-tag tools">Claude AI</span>
             <span class="skill-tag tools">Canva</span>
-            <span class="skill-tag tools">Salesforce</span>
-            <span class="skill-tag tools">Jira / Slack</span>
           </div>
         </div>
 
@@ -615,8 +623,8 @@
           <div class="skill-tags">
             <span class="skill-tag">Brand Strategy</span>
             <span class="skill-tag">PR &amp; Media Relations</span>
-            <span class="skill-tag">Cross-Functional Leadership</span>
             <span class="skill-tag">Agency Management</span>
+            <span class="skill-tag">Cross-Functional Leadership</span>
             <span class="skill-tag">KPI &amp; ROI Reporting</span>
             <span class="skill-tag">Crisis Communications</span>
           </div>
@@ -627,11 +635,11 @@
       <div class="sidebar-section">
         <div class="section-title">
           <svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
-          Platform Split (2024–25)
+          Platform Split 2024–25
         </div>
         <div class="platform-row">
           <div class="platform-label-row"><span class="platform-name">📸 Instagram</span><span class="platform-pct">62%</span></div>
-          <div class="platform-bar"><div class="platform-fill" style="width:62%;background:linear-gradient(90deg,#e1306c,#ff6b9d)"></div></div>
+          <div class="platform-bar"><div class="platform-fill" style="width:62%;background:linear-gradient(90deg,#e1306c,#f77fb0)"></div></div>
         </div>
         <div class="platform-row">
           <div class="platform-label-row"><span class="platform-name">🎵 TikTok</span><span class="platform-pct">28%</span></div>
@@ -639,33 +647,33 @@
         </div>
         <div class="platform-row">
           <div class="platform-label-row"><span class="platform-name">👥 Facebook</span><span class="platform-pct">9%</span></div>
-          <div class="platform-bar"><div class="platform-fill" style="width:9%;background:linear-gradient(90deg,#1877f2,#4a90e2)"></div></div>
+          <div class="platform-bar"><div class="platform-fill" style="width:9%;background:linear-gradient(90deg,#1877f2,#5ba3f5)"></div></div>
         </div>
         <div class="platform-row">
           <div class="platform-label-row"><span class="platform-name">▶ YouTube</span><span class="platform-pct">1%</span></div>
-          <div class="platform-bar"><div class="platform-fill" style="width:1%;background:linear-gradient(90deg,#ff0000,#ff6666)"></div></div>
+          <div class="platform-bar"><div class="platform-fill" style="width:5%;background:linear-gradient(90deg,#ff0000,#ff5555)"></div></div>
         </div>
       </div>
 
-      <!-- YOY RESULTS -->
+      <!-- YOY -->
       <div class="sidebar-section">
         <div class="section-title">
           <svg viewBox="0 0 24 24"><path d="M3.5 18.5l6-6 4 4L22 6.92M22 6.92V12M22 6.92H17"/></svg>
           Results by Year
         </div>
         <div class="yoy-box">
-          <div class="yoy-year" style="color:#c8a84b">2024 — Full Year</div>
-          <div class="yoy-stat"><span class="yoy-key">Views</span><span class="yoy-val red">38.8M</span></div>
-          <div class="yoy-stat"><span class="yoy-key">Posts</span><span class="yoy-val">432</span></div>
+          <div class="yoy-year" style="color:var(--navy)">2024 — Full Year</div>
+          <div class="yoy-stat"><span class="yoy-key">Total Views</span><span class="yoy-val hi">38.8 million</span></div>
+          <div class="yoy-stat"><span class="yoy-key">Total Posts</span><span class="yoy-val">432</span></div>
           <div class="yoy-stat"><span class="yoy-key">Creators</span><span class="yoy-val">78 unique</span></div>
-          <div class="yoy-stat"><span class="yoy-key">Peak month</span><span class="yoy-val red">11.1M (June)</span></div>
+          <div class="yoy-stat"><span class="yoy-key">Peak month</span><span class="yoy-val hi">11.1M views — June</span></div>
         </div>
         <div class="yoy-box">
-          <div class="yoy-year" style="color:var(--rauber)">2025 — Jan–Oct</div>
-          <div class="yoy-stat"><span class="yoy-key">Views</span><span class="yoy-val red">55M+</span></div>
-          <div class="yoy-stat"><span class="yoy-key">Posts</span><span class="yoy-val">602+</span></div>
+          <div class="yoy-year" style="color:var(--teal)">2025 — Jan to Oct</div>
+          <div class="yoy-stat"><span class="yoy-key">Total Views</span><span class="yoy-val hi">55+ million</span></div>
+          <div class="yoy-stat"><span class="yoy-key">Total Posts</span><span class="yoy-val">602+</span></div>
           <div class="yoy-stat"><span class="yoy-key">New markets</span><span class="yoy-val">5+</span></div>
-          <div class="yoy-stat"><span class="yoy-key">Peak video</span><span class="yoy-val red">2.7M views</span></div>
+          <div class="yoy-stat"><span class="yoy-key">Peak video</span><span class="yoy-val hi">2.7M views</span></div>
         </div>
       </div>
 
@@ -695,8 +703,8 @@
         </div>
         <div class="cert-item"><div class="cert-dot"></div>Strategic Communications</div>
         <div class="cert-item"><div class="cert-dot"></div>Digital Marketing</div>
-        <div class="cert-item"><div class="cert-dot prog"></div>Meta Digital Marketing Associate <em style="font-size:10px;color:var(--muted);"> (in progress)</em></div>
-        <div class="cert-item"><div class="cert-dot prog"></div>Google Ads Certification <em style="font-size:10px;color:var(--muted);"> (in progress)</em></div>
+        <div class="cert-item"><div class="cert-dot prog"></div>Meta Digital Marketing Associate <em style="font-size:9.5px;color:var(--muted);"> (in progress)</em></div>
+        <div class="cert-item"><div class="cert-dot prog"></div>Google Ads Certification <em style="font-size:9.5px;color:var(--muted);"> (in progress)</em></div>
       </div>
 
       <!-- LANGUAGES -->
@@ -713,7 +721,7 @@
           <div class="lang-row"><span class="lang-name">English</span><span class="lang-lvl">Professional</span></div>
           <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
         </div>
-        <div style="font-size:10.5px;color:var(--muted);margin-top:6px;">Portuguese — basic familiarity</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:5px;">Portuguese — basic familiarity</div>
       </div>
 
     </aside>
